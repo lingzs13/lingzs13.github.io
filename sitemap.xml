@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zs13.eu.org/posts/50857/</loc>
+    
+    <lastmod>2024-01-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zs13.eu.org/posts/40541/</loc>
     
     <lastmod>2023-12-22</lastmod>
@@ -49,7 +58,7 @@
 
   <url>
     <loc>https://zs13.eu.org/</loc>
-    <lastmod>2024-01-06</lastmod>
+    <lastmod>2024-01-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -57,35 +66,63 @@
   
   <url>
     <loc>https://zs13.eu.org/tags/java/</loc>
-    <lastmod>2024-01-06</lastmod>
+    <lastmod>2024-01-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://zs13.eu.org/tags/github/</loc>
-    <lastmod>2024-01-06</lastmod>
+    <lastmod>2024-01-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://zs13.eu.org/tags/test/</loc>
-    <lastmod>2024-01-06</lastmod>
+    <lastmod>2024-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zs13.eu.org/tags/linux/</loc>
+    <lastmod>2024-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zs13.eu.org/tags/archkinux/</loc>
+    <lastmod>2024-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zs13.eu.org/tags/nvidia/</loc>
+    <lastmod>2024-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zs13.eu.org/tags/%E7%A1%AC%E4%BB%B6%E8%A7%A3%E7%A0%81/</loc>
+    <lastmod>2024-01-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://zs13.eu.org/tags/hello/</loc>
-    <lastmod>2024-01-06</lastmod>
+    <lastmod>2024-01-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://zs13.eu.org/tags/zs13/</loc>
-    <lastmod>2024-01-06</lastmod>
+    <lastmod>2024-01-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -94,7 +131,14 @@
   
   <url>
     <loc>https://zs13.eu.org/categories/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2024-01-06</lastmod>
+    <lastmod>2024-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zs13.eu.org/categories/%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/</loc>
+    <lastmod>2024-01-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

@@ -1,3 +1,4 @@
+https://zs13.eu.org/posts/50857/
 https://zs13.eu.org/posts/40541/
 https://zs13.eu.org/posts/16107/
 https://zs13.eu.org/tags/index.html
@@ -7,6 +8,11 @@ https://zs13.eu.org/
 https://zs13.eu.org/tags/java/
 https://zs13.eu.org/tags/github/
 https://zs13.eu.org/tags/test/
+https://zs13.eu.org/tags/linux/
+https://zs13.eu.org/tags/archkinux/
+https://zs13.eu.org/tags/nvidia/
+https://zs13.eu.org/tags/%E7%A1%AC%E4%BB%B6%E8%A7%A3%E7%A0%81/
 https://zs13.eu.org/tags/hello/
 https://zs13.eu.org/tags/zs13/
 https://zs13.eu.org/categories/%E6%B5%8B%E8%AF%95/
+https://zs13.eu.org/categories/%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/
