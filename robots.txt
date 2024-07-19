@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://blog.zs13.tech/submit_urls.txt
+Sitemap: https://blog.zs13.tech/baidusitemap.xml
