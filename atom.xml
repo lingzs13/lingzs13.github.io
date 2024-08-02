@@ -148,22 +148,21 @@
   </entry>
   
   <entry>
-    <title>认识O(NlogN) 递归</title>
+    <title>时间复杂度和空间复杂度</title>
     <link href="https://blog.zs13.tech/posts/40486/"/>
     <id>https://blog.zs13.tech/posts/40486/</id>
     <published>2024-06-10T05:05:00.000Z</published>
-    <updated>2024-07-23T05:25:00.000Z</updated>
+    <updated>2024-07-30T08:38:00.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="知识点">知识点</h2><h3 id="求中点">求中点</h3><p>   正常想法为<code>mid</code>=(<code>L</code>+<code>R</code>)/2，但在特殊情况下可能会溢出导致结果的不准确如两个值都很大的时候<code>L+R</code>会<code>溢出</code>，此时可以把<code>L</code>提取出来变成<code>mid = L + (R-L)/2</code>。 &gt; 在程序里可以写成 <code>mid = L + （(R-L) &gt;&gt; 1)</code>;算术左移一位等同于除以2 比使用<code>/</code>性能更好。</p><h3id="递归行为时间复杂度计算master公式">递归行为时间复杂度计算(master公式)</h3><p>T(N)=a*T(N/b)+O(N^d) 母   次 子</p><table><thead><tr><th>公式</th><th>时间复杂度</th><th></th></tr></thead><tbody><tr><td>logb(a) &lt; d</td><td>O(N^d)</td><td></td></tr><tr><td>logb(a) &gt; d</td><td>O(N^logb(a))</td><td></td></tr><tr><td>logb(a) == d</td><td>O(N^d*logN)</td><td></td></tr></tbody></table>]]></content>
+    <content type="html"><![CDATA[<h2 id="基础">基础</h2><ol type="1"><li>常数操作，固定时间的操作，执行时间和数据量无关</li><li>时间复杂度，一个和数据量有关、只要高阶项、不要低阶项、不要常数项的操作次数表达式</li><li>严格固定流程的算法，一定要强调最差情况！比如插入排序</li><li>算法流程上利用随机行为作为重要部分的，要看平均或者期望的时间复杂度，因为最差的时间复杂度无意义用生成相邻值不同的数组来说明</li><li>算法流程上利用随机行为作为重要部分的，还有随机快速排序</li><li>时间复杂度的内涵：描述算法运行时间和数据量大小的关系，且当数据量很大很大时，这种关系相当的本质，并且排除了低级项、常数时间的干扰</li><li>空间复杂度，强调额外空间：常数项时间，放弃理论分析、选择实验来确定，因为不同常数操作的时间不同</li><li>什么叫最有解，先满足时间复杂度最优，然后用尽量少用空间的解</li><li>时间复杂度的均摊，用动态数组的扩容来说明（等比数列、均摊的意义）</li><li>不要用代码结构来判断时间复杂度，比如只有一个while循环的冒泡排序，其时间复杂度O(N^2)</li><li>不要用代码结构开判断时间复杂度，比如：N/1+N/2+N/3+…N/N，这个流程的时间复杂度时O(N*logN)</li><li>时间复杂度只能是对算法流程充分理解才能分析出来，而不是简单的看代码结构！这是一个常见的错误！甚至有些算法的实现用了多层循环嵌套，但时间复杂度是O(N)的。</li></ol><h2 id="知识点">知识点</h2><h3 id="求中点">求中点</h3><p>   正常想法为<code>mid</code>=(<code>L</code>+<code>R</code>)/2，但在特殊情况下可能会溢出导致结果的不准确如两个值都很大的时候<code>L+R</code>会<code>溢出</code>，此时可以把<code>L</code>提取出来变成<code>mid = L + (R-L)/2</code>。 &gt; 在程序里可以写成 <code>mid = L + （(R-L) &gt;&gt; 1)</code>;算术左移一位等同于除以2 比使用<code>/</code>性能更好。</p><h3id="递归行为时间复杂度计算master公式">递归行为时间复杂度计算(master公式)</h3><p>T(N)=a*T(N/b)+O(N^c) 母   次 子</p><table><thead><tr><th>公式</th><th>时间复杂度</th><th></th></tr></thead><tbody><tr><td>logb(a) &lt; d</td><td>O(N^d)</td><td></td></tr><tr><td>logb(a) &gt; d</td><td>O(N^logb(a))</td><td></td></tr><tr><td>logb(a) == d</td><td>O(N^d*logN)</td><td></td></tr></tbody></table>]]></content>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;知识点&quot;&gt;知识点&lt;/h2&gt;
-&lt;h3 id=&quot;求中点&quot;&gt;求中点&lt;/h3&gt;
-&lt;p&gt;  </summary>
+    <summary type="html">&lt;h2 id=&quot;基础&quot;&gt;基础&lt;/h2&gt;
+&lt;ol</summary>
         
       
     
@@ -181,11 +180,11 @@
   </entry>
   
   <entry>
-    <title>数据结构学习day01：复杂度与简单排序算法</title>
+    <title>复杂度与简单排序算法</title>
     <link href="https://blog.zs13.tech/posts/21118/"/>
     <id>https://blog.zs13.tech/posts/21118/</id>
     <published>2024-06-05T05:42:00.000Z</published>
-    <updated>2024-07-23T05:26:00.000Z</updated>
+    <updated>2024-08-02T09:06:00.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前置知识点的学习">前置知识点的学习</h2><h3 id="计算机逻辑运算">计算机逻辑运算</h3><div class="note info flat"><ul><li>与 ：当所有输入条件同时满足1，输出1；输入条件只要有0就输出0。java :&amp;</li><li>或：输入条件有1即输出1；一个1也没有才输出0。java : |</li><li>非：输出结果与输入条件取反。0变1，1变0。 java : !</li><li>异或：仅当两输入取不同的值时异或结果为1；否则均为0。java : ^可以理解为无进位加法</li></ul></div><p><code>异或</code>的规则: 1. 0^N= N N^N=0 2. 符合交换律和结合率A<sup>B=B</sup>A  (A<sup>B)</sup>B=A<sup>(B</sup>C)</p><h4 id="通过异或运算交换两个变量的值">通过异或运算交换两个变量的值</h4><div class="note warning flat"><p>如果a和b指向同一个内存会导致N^N=0，而出现问题，在平时不推荐使用。</p></div><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">main</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">234</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">349</span>;</span><br><span class="line">        a = a ^ b;</span><br><span class="line">        b = a ^ b;</span><br><span class="line">        a = a ^ b;</span><br><span class="line">        System.out.println(<span class="string">&quot;a:&quot;</span>+a+<span class="string">&quot; &quot;</span>+<span class="string">&quot;b:&quot;</span>+b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//运行结果为a:349 b:234</span></span><br></pre></td></tr></table></figure><h2 id="复杂度计算">复杂度计算</h2><p>  以<code>冒泡排序</code>为例：冒泡排序每次循环所用的时间分别为1<sub>n-1,1</sub>n-2,1-n<sub>3,…,1</sub>2。为一个<code>d</code>为<code>1</code>的<code>等差数列</code>则这个算法的时间消耗为<code>Sn=n*a1+n(n-1)d/2</code>去掉<code>常数</code>和<code>低次幂的数</code>只保留<code>最高次幂的数</code>结果为O(n²)。 &gt;时间复杂度按算法的最坏情况记。例：插入排序最好情况O(N)，最坏情况O(N²)。</p><h2id="提取出一个二进制数最右的一个1所在的位置">提取出一个二进制数最右的一个1所在的位置</h2><table><thead><tr><th>变量名</th><th>二进制数</th></tr></thead><tbody><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr></tbody></table><div class="line-block"></div><h2id="常见排序算法时间复杂度和空间复杂度">常见排序算法时间复杂度和空间复杂度</h2><p><img src="https://r2.zs13.eu.org/2024/06/202406051749013.webp" /></p>]]></content>
     
