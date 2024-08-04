@@ -3,6 +3,7 @@ https://blog.zs13.tech/tags/index.html
 https://blog.zs13.tech/link/index.html
 https://blog.zs13.tech/categories/index.html
 https://blog.zs13.tech/equipment/index.html
+https://blog.zs13.tech/posts/35411/
 https://blog.zs13.tech/posts/21118/
 https://blog.zs13.tech/posts/40486/
 https://blog.zs13.tech/posts/14369/
@@ -19,11 +20,13 @@ https://blog.zs13.tech/tags/vue/
 https://blog.zs13.tech/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/
 https://blog.zs13.tech/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/
 https://blog.zs13.tech/tags/%E7%A1%AC%E4%BB%B6%E8%A7%A3%E7%A0%81/
+https://blog.zs13.tech/tags/aria2/
 https://blog.zs13.tech/tags/linux/
 https://blog.zs13.tech/tags/nvidia/
 https://blog.zs13.tech/tags/spring/
 https://blog.zs13.tech/tags/winget/
 https://blog.zs13.tech/tags/Windows/
+https://blog.zs13.tech/tags/windows/
 https://blog.zs13.tech/tags/spring%E9%A1%B9%E7%9B%AE/
 https://blog.zs13.tech/tags/archlinux/
 https://blog.zs13.tech/categories/%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/
