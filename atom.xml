@@ -6,7 +6,7 @@
   <link href="https://blog.zs13.tech/atom.xml" rel="self"/>
   
   <link href="https://blog.zs13.tech/"/>
-  <updated>2024-08-04T05:27:00.000Z</updated>
+  <updated>2024-08-12T08:43:00.000Z</updated>
   <id>https://blog.zs13.tech/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker使用的基本知识</title>
+    <link href="https://blog.zs13.tech/posts/31322/"/>
+    <id>https://blog.zs13.tech/posts/31322/</id>
+    <published>2024-08-12T05:42:00.000Z</published>
+    <updated>2024-08-12T08:43:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简单入门">简单入门</h2><h3 id="通过docker部署mysql">通过docker部署mysql</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">--name mysql \</span><br><span class="line">-p 3306:3306 \</span><br><span class="line">-e TZ=Asia/Shanghai \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=123 \</span><br><span class="line">mysql</span><br></pre></td></tr></table></figure><ul><li>docker run : 创建并运行一个容器，-d是让容器在后台运行</li><li>–name mysql : 给容器起个名字，必须唯一</li><li>-p 3306:3306 : 设置端口映射 <code>宿主端口:容器端口</code></li><li>-e KEY=VALUE : 设置环境变量</li><li>mysql : 镜像名 <code>[repository]:[tag]</code> 镜像名:镜像版本不填默认latest</li></ul><h2 id="基础命令">基础命令</h2><h3 id="常见命令">常见命令</h3><ul><li>docker pull 获取镜像</li><li>docker build 自定义镜像 需要 dockerfile文件</li><li>docker save 保存docker镜像</li><li>docker load 加载本地镜像</li><li>docker push 上传镜像到仓库</li><li>docker stop/start 开启/关闭容器进程</li><li>docker ps 查看容器</li><li>docker rm/rmi 删除容器/镜像</li><li>docker logs 查看日志</li><li>docker exec 进入容器</li></ul><h3 id="通过部署nginx联系">通过部署nginx联系</h3><p>拉取nginx：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull nginx</span><br></pre></td></tr></table></figure><p>查看本地镜像：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure><p>保存镜像：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker save -o nginx.tar nginx:latest</span><br><span class="line">// -o 保存名 镜像名:版本</span><br></pre></td></tr></table></figure><p>删除镜像：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi nginx:latest</span><br></pre></td></tr></table></figure><p>加载镜像：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker load -i nginx.tar</span><br></pre></td></tr></table></figure><p>启动nginx：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name nginx -p 80:80 nginx</span><br></pre></td></tr></table></figure><p>查看容器状态：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure><p>启动一个新容器：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name nginx -p 80:80 nginx</span><br></pre></td></tr></table></figure><p>停止容器：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker stop nginx</span><br><span class="line">//docker stop &#123;NAMES或者ID&#125;</span><br></pre></td></tr></table></figure><p>启动一个旧容器容器：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker start nginx</span><br><span class="line">//docker start &#123;NAMES或者ID&#125;</span><br></pre></td></tr></table></figure><p>查看日志：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker logs nginx</span><br><span class="line">// -f 持续查看日志</span><br></pre></td></tr></table></figure><p>进入容器内部：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it nginx bash</span><br></pre></td></tr></table></figure><h4 id="部分可选配置">部分可选配置</h4><p>设置命令别名修改<code>~/.bashrc</code>文件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alias dps = &#x27;docker ps --format &quot;table &#123;&#123;.ID&#125;&#125;\t&#123;&#123;.Image&#125;&#125;\t&#123;&#123;.Ports&#125;&#125;\t&#123;&#123;.Names&#125;&#125;&quot;&#x27;</span><br><span class="line">alias dis = &#x27;docker images&#x27;</span><br></pre></td></tr></table></figure><h2 id="docker数据卷">Docker数据卷</h2><p>官方定义：<code>数据卷</code>是一个虚拟目录，是<code>容器内目录</code>与<code>宿主机目录</code>之间映射的桥梁。</p><table><colgroup><col style="width: 18%" /><col style="width: 8%" /><col style="width: 73%" /></colgroup><thead><tr><th>命令</th><th>说明</th><th>文档地址</th></tr></thead><tbody><tr><td>docker volume create</td><td>创建数据卷</td><td><ahref="https://docs.docker.com/reference/cli/docker/volume/create/">docker_volume_create</a></td></tr><tr><td>docker volume ls</td><td>查看所有数据卷</td><td><ahref="https://docs.docker.com/reference/cli/docker/volume/ls/">docker_volume_ls</a></td></tr><tr><td>docker volume rm</td><td>删除指定数据卷</td><td><ahref="https://docs.docker.com/reference/cli/docker/volume/rm">docker_volume_rm</a></td></tr><tr><td>docker volume inspect</td><td>查看某个数据卷的详情</td><td><ahref="https://docs.docker.com/reference/cli/docker/volume/inspect">docker_volume_inspect</a></td></tr><tr><td>docker volume prune</td><td>清楚数据卷</td><td><ahref="https://docs.docker.com/reference/cli/docker/volume/prune/">docker_volume_prune</a></td></tr></tbody></table><h3 id="简单使用">简单使用</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//创建挂载数据卷的nginx</span><br><span class="line">docker run -d --name -p 80:80 -v html:/usr/share/nginx/html nginx</span><br></pre></td></tr></table></figure><p>查询数据卷： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume ls</span><br></pre></td></tr></table></figure> 查看详细数据： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume inspect html</span><br></pre></td></tr></table></figure> ####本地挂载 - -v 本地目录:容器内目录</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简单入门&quot;&gt;简单入门&lt;/h2&gt;
+&lt;h3 id=&quot;通过docker部署mysql&quot;&gt;通过docker部署mysql&lt;/h3&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://blog.zs13.tech/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="linux" scheme="https://blog.zs13.tech/tags/linux/"/>
+    
+    <category term="docker" scheme="https://blog.zs13.tech/tags/docker/"/>
+    
+  </entry>
   
   <entry>
     <title>开源下载器aria2安装及配置(windows环境)</title>
@@ -174,6 +205,8 @@
     <category term="学习笔记" scheme="https://blog.zs13.tech/categories/%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F-vue-spring%E9%A1%B9%E7%9B%AE%E5%AE%9E%E7%8E%B0/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
+    <category term="学习笔记" scheme="https://blog.zs13.tech/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
     <category term="spring" scheme="https://blog.zs13.tech/tags/spring/"/>
     
   </entry>
@@ -276,7 +309,7 @@
     
     <category term="winget" scheme="https://blog.zs13.tech/tags/winget/"/>
     
-    <category term="Windows" scheme="https://blog.zs13.tech/tags/Windows/"/>
+    <category term="windows" scheme="https://blog.zs13.tech/tags/windows/"/>
     
   </entry>
   
