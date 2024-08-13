@@ -1,8 +1,11 @@
 https://blog.zs13.tech/manifest.json
 https://blog.zs13.tech/tags/index.html
 https://blog.zs13.tech/link/index.html
+https://blog.zs13.tech/privacy/index.html
+https://blog.zs13.tech/posts/40486/
 https://blog.zs13.tech/about/index.html
 https://blog.zs13.tech/categories/index.html
+https://blog.zs13.tech/fcircle/index.html
 https://blog.zs13.tech/equipment/index.html
 https://blog.zs13.tech/posts/31322/
 https://blog.zs13.tech/posts/35411/
