@@ -248,7 +248,7 @@
     <link href="https://blog.zs13.tech/posts/40486/"/>
     <id>https://blog.zs13.tech/posts/40486/</id>
     <published>2024-06-10T05:05:00.000Z</published>
-    <updated>2024-09-26T08:05:45.964Z</updated>
+    <updated>2024-09-26T08:14:03.194Z</updated>
     
     <content type="html"><![CDATA[<h1 id="知识点">知识点</h1><h2 id="求中点">求中点</h2><p>   正常想法为<code>mid</code>=(<code>L</code>+<code>R</code>)/2，但在特殊情况下可能会溢出导致结果的不准确如两个值都很大的时候<code>L+R</code>会<code>溢出</code>，此时可以把<code>L</code>提取出来变成<code>mid = L + (R-L)/2</code>。 &gt; 在程序里可以写成 <code>mid = L + （(R-L) &gt;&gt; 1)</code>;算术左移一位等同于除以2 比使用<code>/</code>性能更好。 ##递归行为时间复杂度计算(master公式) T(N)=a*T(N/b)+O(N^d) 母   次 子</p><table><thead><tr><th>公式</th><th>时间复杂度</th><th></th></tr></thead><tbody><tr><td>logb(a) &lt; d</td><td>O(N^d)</td><td></td></tr><tr><td>logb(a) &gt; d</td><td>O(N^logb(a))</td><td></td></tr><tr><td>logb(a) == d</td><td>O(N^d*logN)</td><td></td></tr></tbody></table>]]></content>
     
